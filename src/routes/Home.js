@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function Home() {
+const Home = () => {
   const [text, setText] = useState('');
   function onChange(e) {
     setText(e.target.value);
@@ -18,6 +18,6 @@ function Home() {
       </form>
     </>
   );
-}
+};
 
 export default Home;
