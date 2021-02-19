@@ -5,14 +5,14 @@ import ToDo from '../components/ToDo';
 
 const Home = ({ toDos, addToDo }) => {
   const [text, setText] = useState('');
-  function onChange(e) {
+  const onChange = (e) => {
     setText(e.target.value);
-  }
-  function onSubmit(e) {
+  };
+  const onSubmit = (e) => {
     e.preventDefault();
     addToDo(text);
     setText('');
-  }
+  };
   return (
     <>
       <h1>To Do</h1>
