@@ -11,7 +11,7 @@ const reducer = (state = [], action) => {
   console.log(action);
   switch (action.type) {
     case ADD_TODO:
-      return [...state, { text: action.text, id: Date.now() }];
+      return [...state, { text: action.text, id: action.id }];
     case DLELTE_TODO:
       return [];
     default:
@@ -27,7 +27,8 @@ const onSubmit = (e) => {
   e.preventDefault();
   const toDo = input.value;
   input.value = "";
-  store.dispatch({ type: ADD_TODO, text: toDo });
+  const id = Date.now();
+  store.dispatch({ type: ADD_TODO, text: toDo, id: id });
 };
 
 form.addEventListener("submit", onSubmit);
